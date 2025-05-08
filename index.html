@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-container">
+        <img src="assets/background/Room-book.png" class="bg-loader" alt="">
+        <img src="assets/background/Room-Scenery.png" class="grass-background" alt="">
+        <div id="cloud-container"></div>
+        <div class="room"></div>
+        <img id="crystal" src="assets/background/Room-Crystal.png" alt="">
+        <img id="book" src="assets/background/Room-Book.png" alt="book" onclick="bookPressed()">
+      </div>    
+    
+    <div class="book_popup">
+        <img src="assets/close.png" alt="" class="close" onclick="closeBook()">
+        <img src="assets/arrowRight.png" alt="" class="arrow_left" onclick="prevPage()">
+        <img src="assets/arrowRight.png" alt="" class="arrow_right" onclick="nextPage()">
+        <img src="assets/Open-Close/Open/1.png" alt="" class="animated_book">
+        <div class="book_container">
+            <div class="page_left">
+                <img src="assets/Content-Appear/13.png" alt="" class="animated_page">
+                <div class="page_1">
+                    <div class="title_container">
+                        <h2>
+                            Profile
+                        </h2>
+                    </div>
+                    <div style="display: flex;">
+                        <img src="assets/profilePicPixel.png" alt="profile picture" class="profile_picture">
+                    </div>
+                    <p class="about_me">I'm August, a freelance IT specialist and computer science student at Uppsala University. I have hands-on experience in networking, server management, and automation, and I enjoy solving technical challenges with practical, efficient solutions.</p>
+                </div>
+                <div class="page_2">
+                    <div class="title_container">
+                        <h2>
+                            Inventory
+                        </h2>
+                    </div>
+                    <div class="selected_item">
+                        <img src="assets/item_holder.png" alt="" class="selected_item_holder">
+                        <img src="" alt="" class="selected_item_image">
+                        <h3 class="selected_item_name"></h3>
+                        <h3 class="description_text">Description:</h3>
+                        <h4 class="selected_item_info"></h4>  
+                        <h5 class="selected_item_links">Link: <a href="" class="selected_item_link"></a></h5>
+                        <h5 class="selected_item_links">Github: <a href="" class="selected_item_github"></a></h5>
+                        <h6 class="selected_item_date"></h6>
+                    </div>
+                </div>
+                <div class="page_3">
+                    <div class="title_container">
+                        <h2>
+                            Info
+                        </h2>
+                    </div>
+                    <h3 style="text-align:center; width:100%; padding:2%; color: #303030" ;>
+                        Special thanks to:
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        humble pixel
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        for the amazing art!
+                    </h3>
+                    <div class="link_container">
+                        <a href="https://humblepixel.itch.io/">
+                            <img src="assets/icheo.png" alt="" class="link_buttons" />
+                        </a>
+                        <a href="https://www.reddit.com/user/HumblePixelOfficial/">
+                            <img src="assets/reddit.png" alt="" class="link_buttons"/>
+                        </a>
+                        <a href="https://twitter.com/HumblePixelShop">
+                            <img src="assets/x.png" alt="" class="link_buttons" />
+                        </a>
+                    </div>
+                    <h3 style="font-size: 80%; text-align: center; color: #303030" ;>
+                        Check out his social media
+                        <br />
+                        <br />
+                        for more awesome art!
+                    </h3>
+                </div>
+            </div>
+            <div class="page_right">
+                <img src="assets/Content-Appear/13.png" alt="" class="animated_page">
+                <div class="page_1">
+                        <div class="title_container">
+                            <h2>
+                                Contact
+                            </h2>
+                        </div>
+                        <div>
+                            
+                        </div>
+                        <h5 class="selected_item_links" style="margin-left: 12%; color: #91665B;">Mail:    august.frigo@gmail.com</h5>
+                        <h5 class="selected_item_links" style="margin-left: 12%; color: #91665B;">Github: <a href="">github.com</a></h5>
+                        <h5 class="selected_item_links" style="margin-left: 12%; color: #91665B;">LinkedIn: <a href="">linkedin.com</a></h5>
+                        <a href="assets/CV.pdf" style="text-decoration: none; color: #303030;">
+                            <div class="CV_container"> 
+                                <h2> 
+                                    CV
+                                </h2>
+                            </div>
+                        </a>
+                </div>
+                <div class="page_2">
+                    <div class="title_container">
+                        <h2>
+                            Items
+                        </h2>
+                    </div>
+                    <div class="inventory_grid">
+                    </div>
+                </div>
+                <div class="page_3">
+                    <div style="text-align:center; font-size: 55%; padding-top: 50%; color: #303030">
+                    <h3>
+                        All code may be used freely for any purpose.
+                        <br /><br /><br />
+                        However, all rights to the artwork remain 
+                        <br /><br /><br />
+                        with Humble Pixel.
+                    </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
