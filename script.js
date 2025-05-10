@@ -421,27 +421,10 @@ function hide_content() {
 
 // Item selector
 let items = [
-    {name: 'stock vids video', image: 'assets/stockVids.png', info: 'This is a video of the stock videos website.', link: 'https://www.youtube.com/watch?v=brLTOFDcQHU', github: "https://github.com/Bob1883/stock-vids", date: "2024-05-24"},
-    {name: 'stock vids kod', image: 'assets/stockVids.png', info: 'Code for the stock videos website.', link: "https://github.com/Bob1883/stock-vids", github: "", date: "2024-05-24"},
-    {name: 'stock vids docs', image: 'assets/stockVids.png', info: 'Documentation for the stock videos website.', link: "https://docs.google.com/document/d/1FJIr05hah-VGdzvD1f5c4jaUU-FCmGCKkkLCnMR8sw4/edit?usp=sharing", github: "", date: "2024-05-24"},
-    {name: 'Datamodellering', image: 'assets/D.png', info: 'Datamodellering uppgift', link: 'assets/Datamodellering.pdf', date: "2024-03-17"},
-    {name: 'P2', image: 'assets/p2-logo.png', info: 'login form', link: 'https://github.com/Bob1883/WebDev-P-2', github: "", date: "2024-03-17"},
-    {name: 'P2 desc', image: 'assets/p2-logo.png', info: 'login form desc', link: 'https://youtu.be/jOm2448Xadc', github: "", date: "2024-03-17"},
-    {name: 'SQL uppgifter', image: 'assets/adophin.png', info: 'Uppgifter till SQL', link: 'https://docs.google.com/document/d/1BehLc0F-AZpSZYI2JZH28w5CxRChdZ7_3P91NmsBrcc/edit?usp=sharing', github: "", date: "2024-02-29"},
-    {name: 'TODO app', image: 'assets/TODO_logo.png', info: 'TODO app, video link and code on github included', link: 'https://youtu.be/VLLHL51Aeyw', github: "https://github.com/Bob1883/TODO-app", date: "2024-02-01"},
-    {name: 'TODO app', image: 'assets/TODO_logo.png', info: 'TODO app Documentation', link: 'https://docs.google.com/document/d/1ZqOVgFElVdqhXdjkLaPjqh6QGuNo4dPNrZi6sclVeec/edit?usp=sharing', github: "", date: "2024-01-30"},    
-    {name: 'istock documentation', image: 'assets/istock_logo.png', info: 'Documentation for the istock website.', link: 'https://www.itgwebb.se/klass/webb2/august/dokumentation.pdf', github: "", date: "2024-01-11"},
-    {name: 'istock', image: 'assets/istock_logo.png', info: 'This is a website for looking at stocks and their information.', link: 'https://www.itgwebb.se/klass/webb2/august/istock_market/', github: "", date: "2024-01-11"},
-    {name: 'Sleeq', image: 'assets/sleeqLogo.png', info: "This is a mock-up website for a clothing company; it was just a small school project, so I didn't put too much effort into it.", link: 'https://sleeq.com.sg/', github: "https://github.com", date: "2021-01-01"},
-    {name: 'Empty', image: '', info: ''},
-    {name: 'Empty', image: '', info: ''},
-    {name: 'Empty', image: '', info: ''},
-    {name: 'Empty', image: '', info: ''},
-    {name: 'Empty', image: '', info: ''},
-    {name: 'Empty', image: '', info: ''},
-    {name: 'Empty', image: '', info: ''},
-    {name: 'Empty', image: '', info: ''},
-    {name: 'Empty', image: '', info: ''},
+    {name: 'Portfolio website', image: 'assets/portfolio-wed-icon.png', background_img: 'assets/portfolio-bg-gif.gif', info: 'An interactive portfolio website showcasing projects and skills through a pixel art book style interface.', link: 'https://bob1883.github.io/retro-pixel-art-portfolio-website/', github: "https://github.com/Bob1883/retro-pixel-art-portfolio-website"},
+    {name: 'Empty', image: 'assets/trading-icon.png', background_img: '', info: '', link: '', github: ''},
+    {name: 'Wave', image: 'assets/wave-icon.png', background_img: 'assets/wave-bg-gig.gif.gif', info: 'Wavy is a wave-based pixel art survival game developed during a one-day school hackathon.', link: 'https://play.unity.com/en/games/e1ffa6d4-4a72-4122-a6a7-e14b0a1fb984/wavy', github: 'https://github.com/Bob1883/WAVY'},
+    {name: 'Demon Back', image: 'assets/DemonBack-icon.png', background_img: 'assets/DemonBack-bg-gig.gif', info: 'My first real project. It features a short story where you help a frog recover his stolen cookies from goblins.', link: 'https://github.com/Bob1883/Demon-Back', github: 'https://github.com/Bob1883/Demon-Back'},
 ];
 
 let inventoryGrid = document.querySelector('.inventory_grid');
@@ -450,25 +433,14 @@ let selectedItemName = document.querySelector('.selected_item_name');
 let selectedItemInfo = document.querySelector('.selected_item_info');
 let selectedItemLink = document.querySelector('.selected_item_link');
 let selectedItemGithub = document.querySelector('.selected_item_github');
-let selectedItemDate = document.querySelector('.selected_item_date');
 
 items.forEach((item, index) => {
     let img = document.createElement('img');
     img.src = item.image;
-    // make width 20px 
-    if (window.innerWidth > 600) {
-    img.style.width = '100px';
-    img.style.height = '100px';
-    img.style.marginTop = '20%';
-    img.style.padding = '10px';
-    img.style.border = '4px solid #F7BA43';
-    } else {
-        img.style.width = '50px';
-        img.style.height = '50px';
-        img.style.marginTop = '10%';
-        img.style.padding = '10px';
-        img.style.border = '4px solid #F7BA43';
-    }
+
+    let item_img = document.createElement('div'); 
+    item_img.className = "list_item"
+
     if (item.image !== '') {
         img.style.cursor = 'pointer';
     }
@@ -477,16 +449,16 @@ items.forEach((item, index) => {
         if (item.image === '') {
             return;
         }
-        selectedItemImage.src = item.image;
+        selectedItemImage.src = item.background_img;
         selectedItemName.textContent = item.name;
         selectedItemInfo.textContent = item.info;
         selectedItemLink.href = item.link;
-        selectedItemLink.textContent = item.link;
         selectedItemGithub.href = item.github;
-        selectedItemGithub.textContent = item.github;
-        selectedItemDate.textContent = item.date;
     };
-    inventoryGrid.appendChild(img);
+
+    inventoryGrid.appendChild(item_img);
+    item_img.appendChild(img);
+    
 
     if (index === 0) {
         img.click();
@@ -499,39 +471,29 @@ window.addEventListener('resize', function() {
     items.forEach((item, index) => {
         let img = document.createElement('img');
         img.src = item.image;
-        // make width 20px 
-        if (window.innerWidth > 600) {
-        img.style.width = '100px';
-        img.style.height = '100px';
-        img.style.marginTop = '20%';
-        img.style.padding = '10px';
-        img.style.border = '4px solid #F7BA43';
-        } else {
-            img.style.width = '50px';
-            img.style.height = '50px';
-            img.style.marginTop = '10%';
-            img.style.padding = '10px';
-            img.style.border = '4px solid #F7BA43';
-        }
+    
+        let item_img = document.createElement('div'); 
+        item_img.className = "list_item"
+    
         if (item.image !== '') {
             img.style.cursor = 'pointer';
         }
-
+    
         img.onclick = function() {
             if (item.image === '') {
                 return;
             }
-            selectedItemImage.src = item.image;
+            selectedItemImage.src = item.background_img;
             selectedItemName.textContent = item.name;
             selectedItemInfo.textContent = item.info;
             selectedItemLink.href = item.link;
-            selectedItemLink.textContent = item.link;
             selectedItemGithub.href = item.github;
-            selectedItemGithub.textContent = item.github;
-            selectedItemDate.textContent = item.date;
         };
-        inventoryGrid.appendChild(img);
-
+    
+        inventoryGrid.appendChild(item_img);
+        item_img.appendChild(img);
+        
+    
         if (index === 0) {
             img.click();
         }
