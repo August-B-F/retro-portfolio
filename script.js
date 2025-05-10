@@ -1,3 +1,62 @@
+
+// 1) Build a complete list of all the images we’ll need
+const PRELOAD_PATHS = [];
+
+// animation frames
+for (let i = 1; i <= 6; i++) {
+  PRELOAD_PATHS.push(`assets/Open-Close/Open/${i}.png`);
+  PRELOAD_PATHS.push(`assets/Open-Close/Close/${i}.png`);
+}
+for (let i = 1; i <= 8; i++) {
+  PRELOAD_PATHS.push(`assets/Page-Flip/Left/${i}.png`);
+  PRELOAD_PATHS.push(`assets/Page-Flip/Right/${i}.png`);
+}
+for (let i = 1; i <= 13; i++) {
+  PRELOAD_PATHS.push(`assets/Content-Appear/${i}.png`);
+}
+
+// static assets
+PRELOAD_PATHS.push(
+  'assets/book.png',
+  'assets/close.png',
+  'assets/arrowRight.png',
+  'assets/profilePic.png',
+  'assets/profile_frame.png',
+  'assets/item_holder.png',
+  'assets/D.png',
+  'assets/p2-logo.png',
+  'assets/adophin.png',
+  'assets/TODO_logo.png',
+  'assets/istock_logo.png',
+  'assets/sleeqLogo.png',
+  // add any other one-off images you reference in CSS/html here
+);
+
+// 2) Preload helper
+function preloadImages(paths, onProgress) {
+  let loaded = 0;
+  const total = paths.length;
+  paths.forEach(src => {
+    const img = new Image();
+    img.src = src;
+    img.onload = img.onerror = () => {
+      loaded++;
+      if (onProgress) onProgress(loaded, total);
+    };
+  });
+}
+
+// 3) Wait for the page & all assets to be requested, then kick off our preload
+window.addEventListener('load', () => {
+  preloadImages(PRELOAD_PATHS, (done, total) => {
+    console.log(`Preloaded ${done} / ${total} images`);
+    if (done === total) {
+      console.log('✅ All images preloaded');
+      // At this point everything’s cached and your animations won’t drop frames.
+    }
+  });
+});
+
 const book = document.getElementsByClassName('book_cover');
 const bookPopup = document.getElementsByClassName('book_popup');
 const animatedBook = document.getElementsByClassName('animated_book');
@@ -434,68 +493,53 @@ let selectedItemInfo = document.querySelector('.selected_item_info');
 let selectedItemLink = document.querySelector('.selected_item_link');
 let selectedItemGithub = document.querySelector('.selected_item_github');
 
-items.forEach((item, index) => {
-    let img = document.createElement('img');
-    img.src = item.image;
-
-    let item_img = document.createElement('div'); 
-    item_img.className = "list_item"
-
-    if (item.image !== '') {
-        img.style.cursor = 'pointer';
-    }
-
-    img.onclick = function() {
-        if (item.image === '') {
-            return;
-        }
-        selectedItemImage.src = item.background_img;
-        selectedItemName.textContent = item.name;
-        selectedItemInfo.textContent = item.info;
-        selectedItemLink.href = item.link;
-        selectedItemGithub.href = item.github;
-    };
-
-    inventoryGrid.appendChild(item_img);
-    item_img.appendChild(img);
-    
-
-    if (index === 0) {
-        img.click();
-    }
-});
-
-// if size changes, update the size of the images
-window.addEventListener('resize', function() {
-    inventoryGrid.innerHTML = '';
-    items.forEach((item, index) => {
-        let img = document.createElement('img');
-        img.src = item.image;
-    
-        let item_img = document.createElement('div'); 
-        item_img.className = "list_item"
-    
-        if (item.image !== '') {
-            img.style.cursor = 'pointer';
-        }
-    
-        img.onclick = function() {
-            if (item.image === '') {
-                return;
-            }
-            selectedItemImage.src = item.background_img;
-            selectedItemName.textContent = item.name;
-            selectedItemInfo.textContent = item.info;
-            selectedItemLink.href = item.link;
-            selectedItemGithub.href = item.github;
-        };
-    
-        inventoryGrid.appendChild(item_img);
-        item_img.appendChild(img);
-        
-    
-        if (index === 0) {
-            img.click();
-        }
+function clearAllFrames() {
+    document.querySelectorAll('.list_item').forEach(el => {
+      el.style.backgroundImage = '';
     });
-});
+  }
+  
+  function buildInventory() {
+    inventoryGrid.innerHTML = '';
+  
+    items.forEach((item, index) => {
+      const img      = document.createElement('img');
+      img.src        = item.image;
+      img.style.cursor = item.image ? 'pointer' : 'default';
+  
+      const itemDiv  = document.createElement('div');
+      itemDiv.className = 'list_item';
+  
+      img.addEventListener('click', () => {
+        if (!item.image) return;
+  
+        // 1) clear previous frames
+        clearAllFrames();
+  
+        // 2) set glow frame on selected item
+        itemDiv.style.backgroundImage = "url('assets/item_frame_glow.png')";
+  
+        // 3) update detail pane
+        selectedItemImage.src    = item.background_img;
+        selectedItemName.textContent   = item.name;
+        selectedItemInfo.textContent   = item.info;
+        selectedItemLink.href    = item.link;
+        selectedItemGithub.href  = item.github;
+      });
+  
+      itemDiv.appendChild(img);
+      inventoryGrid.appendChild(itemDiv);
+  
+      // auto-select the first item
+      if (index === 0) {
+        img.click();
+      }
+    });
+  }
+  
+  // initial build
+  buildInventory();
+  
+  // rebuild on resize (to reapply logic if you clear and re-render)
+  window.addEventListener('resize', buildInventory);
+  
