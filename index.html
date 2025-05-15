@@ -3,7 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1,
+    minimum-scale=1,
+    maximum-scale=1,
+    user-scalable=no">
+
     <title>August.B.F Portfolio</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="style.css">
@@ -17,8 +22,8 @@
         <div class="room"></div>
         <img id="crystal" src="assets/background/Room-Crystal.png" alt="">
         <img id="book" src="assets/background/Room-Book.png" alt="book" onclick="bookPressed()">
-      </div>    
-    
+    </div>
+
     <div class="book_popup">
         <img src="assets/close.png" alt="" class="close" onclick="closeBook()">
         <img src="assets/arrowRight.png" alt="" class="arrow_left" onclick="prevPage()">
@@ -28,7 +33,7 @@
         <div class="book_container">
             <div class="page_left">
                 <img src="assets/Content-Appear/13.png" alt="" class="animated_page">
-                <div class="page_1">
+                <div class="page_2">
                     <div class="title_container">
                         <h2>
                             Profile
@@ -38,14 +43,30 @@
                         <img src="assets/profilePicPixel.png" alt="profile picture" class="profile_picture">
                     </div>
                     <p class="about_me_title">About me</p>
-                    <p class="about_me">I'm August, a freelance IT specialist and computer science student at Uppsala University. I have hands-on experience in networking, server management, and automation, and I enjoy solving technical challenges with practical, efficient solutions.</p>
+                    <p class="about_me">I'm August, a freelance IT specialist and computer science student at Uppsala
+                        University. I have hands-on experience in networking, server management, and automation, and I
+                        enjoy solving technical challenges with practical, efficient solutions.</p>
                 </div>
-                <div class="page_2">
+                <div class="page_1">
                     <div class="title_container">
                         <h2>
-                            Items
+                            Projects
                         </h2>
                     </div>
+                    <div class="filter-wrapper">
+                        <!-- ▼ BUTTON -->
+                        <div id="filterToggle" class="filter-toggle">
+                          <img src="assets/filter-button.png"       alt="" class="btn-bg">
+                          <img src="assets/filter-arrow.png"        alt="" class="btn-arrow">
+                          <span class="btn-text">All</span>
+                        </div>
+                      
+                        <!-- ▼ DROPDOWN (hidden by default) -->
+                        <div id="filterDropdown" class="filter-dropdown">
+                          <!-- JS will inject .filter-option here -->
+                        </div>
+                    </div>
+                      
                     <div class="inventory_grid">
                     </div>
                 </div>
@@ -61,12 +82,12 @@
                         <br />
                         <br />
                         <br />
-                        <a href="https://humblepixel.itch.io/">
+                        <a href="https://humblepixel.itch.io/" target="_blank" rel="noopener noreferrer">
                             BG: humble pixel
                         </a>
                         <br />
                         <br />
-                        <a href="https://artistree.io/haltjae#ea751474-3907-4a35-93be-6214274f9a78?ref=search">
+                        <a href="https://artistree.io/haltjae#ea751474-3907-4a35-93be-6214274f9a78?ref=search" target="_blank" rel="noopener noreferrer">
                             Book: haltjae
                         </a>
                         <br />
@@ -76,46 +97,47 @@
                         Feel free to explore their work and follow them on social media.
                     </h3>
                     <h4 class="license_text">
-                        This project’s source code is licensed under the MIT License while all artwork remains the exclusive property of its individual artists and is not covered by that license.
+                        This project’s source code is licensed under the MIT License while all artwork remains the
+                        exclusive property of its individual artists and is not covered by that license.
                     </h4>
                 </div>
             </div>
             <div class="page_right">
                 <img src="assets/Content-Appear/13.png" alt="" class="animated_page">
-                <div class="page_1">
-                        <div class="title_container">
-                            <h2>
-                                Info
-                            </h2>
-                        </div>
-                        <div class="location_container">
-                            <img src="assets/location_logo.png" alt="location logo" class="location_logo">
-                            <p>Uppsala, Sweden</p>
-                        </div>
-                        <div class="icon-container">
-                            <a href="mailto:august.frigo@gmail.com">
-                                <img src="assets/email-logo.png" class="icon" alt="Email">
-                            </a>
-                            <a href="https://github.com/Bob1883" target="_blank">
-                                <img src="assets/github-logo.png" class="icon" alt="Github">
-                            </a>
-                            <a href="https://www.linkedin.com/in/august-brunnberg-frigo-883903274/" target="_blank">
-                                <img src="assets/linkedin-logo.png" class="icon" alt="LinkedIn">
-                            </a>
-                          </div>
-                          
-                        <a href="assets/CV.pdf" style="text-decoration: none; color: #303030;">
-                            <div class="CV_container"> 
-                                <h2> 
-                                    CV
-                                </h2>
-                            </div>
-                        </a>
-                </div>
                 <div class="page_2">
                     <div class="title_container">
                         <h2>
-                            Inventory
+                            Info
+                        </h2>
+                    </div>
+                    <div class="location_container">
+                        <img src="assets/location_logo.png" alt="location logo" class="location_logo">
+                        <p>Uppsala / Amsterdam</p>
+                    </div>
+                    <div class="icon-container">
+                        <a href="mailto:august.frigo@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/email-logo.png" class="icon" alt="Email">
+                        </a>
+                        <a href="https://github.com/Bob1883" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/github-logo.png" class="icon" alt="Github">
+                        </a>
+                        <a href="https://www.linkedin.com/in/august-brunnberg-frigo-883903274/" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/linkedin-logo.png" class="icon" alt="LinkedIn">
+                        </a>
+                    </div>
+
+                    <a href="assets/CV.pdf" style="text-decoration: none; color: #303030;" target="_blank" rel="noopener noreferrer">
+                        <div class="CV_container">
+                            <h2>
+                                CV
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="page_1">
+                    <div class="title_container">
+                        <h2>
+                            Details
                         </h2>
                     </div>
                     <div class="selected_item">
@@ -123,12 +145,12 @@
                             <img src="" alt="" class="selected_item_image">
                         </div>
                         <h3 class="selected_item_name"></h3>
-                        <h4 class="selected_item_info"></h4>  
+                        <h4 class="selected_item_info"></h4>
                         <div class="selected_link_container">
-                            <a href="" class="selected_item_github">
+                            <a href="" class="selected_item_github" target="_blank" rel="noopener noreferrer">
                                 <img src="assets/github-logo.png" alt="" class="selected_item_links">
                             </a>
-                            <a href="" class="selected_item_link">
+                            <a href="" class="selected_item_link" target="_blank" rel="noopener noreferrer">
                                 <img src="assets/link-logo.png" alt="" class="selected_item_links" style="width: 180%;">
                             </a>
                         </div>

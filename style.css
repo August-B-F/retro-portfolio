@@ -186,10 +186,10 @@ img {
   font-size: 120%;
   padding: 4% 5% 2% 4%;
   color: #1a1a1a;
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-container {
@@ -518,7 +518,7 @@ h3 {
   grid-auto-rows: minmax(100px, auto);
   gap: 70px;
   overflow-y: auto;
-  max-height: 590px;
+  max-height: 520px;
   margin-left: 12%;
 
   scrollbar-width: none;
@@ -615,10 +615,10 @@ h3 {
 }
 
 .art_text {
-  text-align:center; 
-  width:100%; 
-  padding:2%; 
-  color: #303030; 
+  text-align: center;
+  width: 100%;
+  padding: 2%;
+  color: #303030;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -638,6 +638,10 @@ h3 {
   font-size: 12px;
 }
 
+.art_text a:hover {
+  color: blueviolet;
+}
+
 .license_text {
   margin-top: 20%;
   font-size: 7px;
@@ -648,6 +652,64 @@ h3 {
   align-self: flex-end;
   line-height: 15px;
 }
+
+.filter-wrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* —— BUTTON —— */
+.filter-toggle {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.filter-toggle .btn-bg {
+  display: block;
+}
+.filter-toggle .btn-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  font-size: 12px;
+}
+.filter-toggle .btn-arrow {
+  position: absolute;
+  top: 50%; left: 0.5rem;   
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* —— DROPDOWN —— */
+.filter-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.filter-option {
+  position: relative;
+  line-height: 0;        /* collapse any font-heights so images sit flush */
+  margin: 0; padding: 0;
+}
+.filter-option .opt-bg {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+.filter-option .opt-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+  font-size: 12px;
+}
+
 
 @media only screen and (max-width: 1350px) {
   .book_container {
