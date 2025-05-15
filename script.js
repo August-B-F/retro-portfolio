@@ -663,6 +663,7 @@ const selectedItemName = document.querySelector('.selected_item_name');
 const selectedItemInfo = document.querySelector('.selected_item_info');
 const selectedItemLink = document.querySelector('.selected_item_link');
 const selectedItemGithub = document.querySelector('.selected_item_github');
+const selectedItemTags = document.querySelector('.selected_item_tag')
 
 function clearAllFrames() {
     document.querySelectorAll('.list_item')
@@ -696,6 +697,7 @@ function buildInventory() {
                 selectedItemInfo.textContent = item.info;
                 selectedItemLink.href = item.link;
                 selectedItemGithub.href = item.github;
+                selectedItemTags.textContent = item.categories.join(", ");
             });
 
             tile.appendChild(img);

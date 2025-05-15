@@ -8,9 +8,9 @@
 
 html,
 body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -581,7 +581,7 @@ h3 {
 
 .selected_item_info {
   flex-grow: 1;
-  height: 130px;
+  height: 100px;
 }
 
 .contact_me {
@@ -710,6 +710,21 @@ h3 {
   font-size: 12px;
 }
 
+.tags_container {
+  display: flex;
+  text-align: start;
+  margin-left: 10%;
+  width: 80%;
+  font-size: 50%;
+  line-height: 25px;
+  color: #91665B;
+  margin-bottom: 30px;
+}
+
+.tags_container p {
+  color: #1a1a1a;
+  margin-right: 10px;
+}
 
 @media only screen and (max-width: 1350px) {
   .book_container {
