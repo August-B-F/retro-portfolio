@@ -698,6 +698,11 @@ function buildInventory() {
                 selectedItemLink.href = item.link;
                 selectedItemGithub.href = item.github;
                 selectedItemTags.textContent = item.categories.join(", ");
+
+                if (window.innerWidth < 1000) {
+                    console.log("kpofsk");
+                    nextPage(); 
+                }
             });
 
             tile.appendChild(img);
