@@ -976,8 +976,9 @@ h3 {
   }
 
   .tags_container {
-    font-size: 35%;
-    margin-bottom: 10px;
+    /* font-size: 35%;
+    margin-bottom: 10px; */
+    display: none;
   }
 
   .about_me_title {
@@ -1007,12 +1008,14 @@ h3 {
   }
 
   .art_text {
-    gap: 20px;
+    height: 900%;
+    gap: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 90%;
     margin-left: 5%;
     font-size: 8px;
-    margin-top: 15%;
-    line-height: 20px;
   }
   
   .art_text a {
@@ -1021,10 +1024,6 @@ h3 {
 
   
 .license_text {
-  margin-top: 22%;
-  font-size: 5px;
-  width: 90%;
-  margin-left: 5%;
-  line-height: 10px;
+  display: none;
 }
 }
