@@ -736,6 +736,11 @@ h3 {
     max-height: 440px;
   }
 
+  .inventory_grid {
+    gap: 35px;
+    max-height: 440px;
+  }
+
   .about_me {
     font-size: 70%;
   }
@@ -745,13 +750,12 @@ h3 {
     font-size: 100%;
   }
 
-  .CV_container {
-    height: 100px;
-    padding-top: 40px;
-  }
-
   .selected_item_image {
     margin-top: 0px;
+  }
+
+  .selected_item_image_container {
+    height: 200px;
   }
 
   .selected_item_holder {
@@ -786,13 +790,10 @@ h3 {
   .arrow_right {
     right: 0px;
   }
-}
 
-@media only screen and (max-width: 1300px) {
-  .desk {
-
-    width: auto;
-    height: 100vh;
+  .art_text {
+    gap: 25px;
+    width: 80%;
   }
 }
 
@@ -842,14 +843,44 @@ h3 {
 
 
 @media only screen and (max-width: 800px) {
+  .inventory_grid {
+    gap: 35px;
+    max-height: 320px;
+  }
+
+  .list_item {
+    width: 75px;
+    height: 75px;
+    padding: 5px;
+  }
+  
+  .list_item img {
+    height: 60px;
+    width: auto;
+  }
+
+  .filter-wrapper {
+    margin-bottom: 20px;
+  }
+
   .background-container {
     transform: scale(0.7);
+  }
+
+  .selected_item_name {
+    font-size: 70%;
+    margin-top: 5%;
+    margin-bottom: 2%;
   }
 
   .book_container {
     transform: translate(-67%, -55%);
     width: 1200px;
     height: 1200px;
+  }
+
+  .selected_item_image_container {
+    height: 150px;
   }
 
   .page_left {
@@ -914,35 +945,19 @@ h3 {
     height: 269px;
   }
 
-  .about_me {
-    font-size: 7px;
-    margin-top: 5%;
-  }
-
   .contact_me {
     margin-top: 8px;
     font-size: 10px;
   }
 
   .selected_item_links {
-    font-size: 7px;
-    margin-top: 0%;
+    width: 150%;
   }
 
   .CV_container {
     height: 70px;
     margin-left: 10%;
     width: 80%;
-    padding-top: 30px;
-  }
-
-  .inventory_grid {
-    max-height: 350px;
-  }
-
-  .selected_item_image {
-    margin-top: -10px;
-    width: 31.5%;
   }
 
   .selected_item_holder {
@@ -953,10 +968,63 @@ h3 {
   }
 
   .selected_item_info {
-    font-size: 10px;
+    font-size: 40%;
   }
 
   .selected_item_date {
     display: none;
   }
+
+  .tags_container {
+    font-size: 35%;
+    margin-bottom: 10px;
+  }
+
+  .about_me_title {
+    font-size: 100%;
+    padding: 4% 0% 0% 0%;
+    color: #1a1a1a;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about_me {
+    width: 90%;
+    line-height: 15px;
+    margin-top: 10px;
+    color: #91665B;
+    font-size: 45%;
+  }
+
+  .location_container p {
+    font-size: 80%;
+  }
+
+  .icon {
+    width: 70px;
+  }
+
+  .art_text {
+    gap: 20px;
+    width: 90%;
+    margin-left: 5%;
+    font-size: 8px;
+    margin-top: 15%;
+    line-height: 20px;
+  }
+  
+  .art_text a {
+    font-size: 9px;
+  }
+
+  
+.license_text {
+  margin-top: 22%;
+  font-size: 5px;
+  width: 90%;
+  margin-left: 5%;
+  line-height: 10px;
+}
 }

@@ -27,25 +27,6 @@ This portfolio site is crafted as an animated book using HTML, CSS, and JavaScri
 * Responsive design principles for cross-device compatibility
 * Asset management using organized folders (e.g., background, icons, pages)
 
-## Structure
-
-```
-portfolio-website/
-├── index.html                # Main HTML document
-├── style.css                 # Stylesheet for layout and animations
-├── script.js                 # JavaScript for logic and page transitions
-├── assets/
-│   ├── background/           # Cloud and room images
-│   ├── Open-Close/           # Book opening/closing frames
-│   ├── Page-Flip/            # Page flip animations
-│   ├── Content-Appear/       # Animated page content
-│   ├── profilePicPixel.png   # Profile picture
-│   ├── icons/                # Social and contact icons
-│   ├── portfolio-wed-icon.png
-│   └── CV.pdf                # Downloadable resume
-└── README.md
-```
-
 ## License
 
 The code is licensed under the MIT License. Artwork assets are credited to individual creators and are not covered by the MIT License. Permission must be obtained from the respective artists for reuse.

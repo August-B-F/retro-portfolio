@@ -548,58 +548,13 @@ populateFilter();
 // Item selector
 let items = [
     {
-        name: 'Portfolio website',
-        image: 'assets/portfolio-wed-icon.png',
-        background_img: 'assets/portfolio-bg-gif.gif',
-        info: 'An interactive portfolio website showcasing projects and skills through a pixel art book style interface.',
-        link: 'https://bob1883.github.io/retro-pixel-art-portfolio-website/',
-        github: "https://github.com/Bob1883/retro-pixel-art-portfolio-website",
-        categories: ['Frontend', 'Website']
-    },
-    {
         name: 'AI Stock Trading',
         image: 'assets/trading-icon.png',
         background_img: 'assets/AI-trading-gif.gif',
         info: 'An AI-powered stock trading system that predicts stock prices and executes trades using web-scraped data and the Alpaca API.',
-        link: 'https://github.com/Bob1883/AI-driven-stock-trading',
-        github: 'https://github.com/Bob1883/AI-driven-stock-trading',
+        link: 'https://github.com/august-b-f/AI-driven-stock-trading',
+        github: 'https://github.com/august-b-f/AI-driven-stock-trading',
         categories: ['Backend', 'AI', 'Python',]
-    },
-    {
-        name: 'Wave',
-        image: 'assets/wave-icon.png',
-        background_img: 'assets/wave-bg-gig.gif.gif',
-        info: 'Wavy is a wave-based pixel art survival game developed during a one-day school hackathon.',
-        link: 'https://play.unity.com/en/games/e1ffa6d4-4a72-4122-a6a7-e14b0a1fb984/wavy',
-        github: 'https://github.com/Bob1883/WAVY',
-        categories: ['Fullstack', 'Frontend', 'Backend', 'AI', 'C#']
-    },
-    {
-        name: 'Demon Back',
-        image: 'assets/DemonBack-icon.png',
-        background_img: 'assets/DemonBack-bg-gig.gif',
-        info: 'My first real project. It features a short story where you help a frog recover his stolen cookies from goblins.',
-        link: 'https://github.com/Bob1883/Demon-Back',
-        github: 'https://github.com/Bob1883/Demon-Back',
-        categories: ['Fullstack', 'Frontend', 'Backend', 'Python']
-    },
-    {
-        name: 'Cube app',
-        image: 'assets/cube-app-icon.png',
-        background_img: 'assets/cube-app-gif.gif',
-        info: 'Electron.js desktop app for decoding and showcasing multimedia projects hidden inside Alberto Frigo’s 8*8*8 m cube.',
-        link: 'https://github.com/Bob1883/cube-app',
-        github: 'https://github.com/Bob1883/cube-app',
-        categories: ['Frontend', 'JS Fwks']
-    },
-    {
-        name: 'Cube compiler',
-        image: 'assets/Cube-compiler-icon.png',
-        background_img: 'assets/Cube-compiler-image.png',
-        info: '',
-        link: '',
-        github: '',
-        categories: ['Fullstack', 'Frontend', 'Backend', 'Python', 'AI']
     },
     {
         name: 'Encrypted notes',
@@ -611,49 +566,94 @@ let items = [
         categories: ['Fullstack', 'Frontend', 'Backend', 'C++']
     },
     {
+        name: 'Kernel AI assistant',
+        image: 'assets/kernel-ai-assistent-icon.png',
+        background_img: 'assets/Kernel-AI-assistant-gif.gif',
+        info: 'A Python-based desktop tool that streamlines workflows through AI-powered text creation and advanced, realistic input automation.',
+        link: 'https://github.com/August-B-F/Kernel-AI-assistant',
+        github: 'https://github.com/August-B-F/Kernel-AI-assistant',
+        categories: ['Fullstack', 'Frontend', 'Backend', 'Python', 'AI']
+    },
+    {
+        name: 'Wave',
+        image: 'assets/wave-icon.png',
+        background_img: 'assets/wave-bg-gig.gif.gif',
+        info: 'Wavy is a wave-based pixel art survival game developed during a one-day school hackathon.',
+        link: 'https://play.unity.com/en/games/e1ffa6d4-4a72-4122-a6a7-e14b0a1fb984/wavy',
+        github: 'https://github.com/august-b-f/WAVY',
+        categories: ['Fullstack', 'Frontend', 'Backend', 'AI', 'C#']
+    },
+    {
+        name: 'Cube app',
+        image: 'assets/cube-app-icon.png',
+        background_img: 'assets/cube-app-gif.gif',
+        info: 'Electron.js desktop app for decoding and showcasing multimedia projects hidden inside Alberto Frigo’s 8*8*8 m cube.',
+        link: 'https://github.com/august-b-f/cube-app',
+        github: 'https://github.com/august-b-f/cube-app',
+        categories: ['Frontend', 'JS Fwks']
+    },
+    {
         name: 'Video platform',
         image: 'assets/Video-platform-icon.png',
         background_img: 'assets/Video-platform-image.png',
         info: 'A React + SQL video platform with content discovery, search, watchlists, and bookmarking in a responsive UI.',
         link: 'https://www.figma.com/design/rtc4oTpJa9aFaPrYSwnrDr/Video-platform?node-id=0-1&p=f&t=kv4hO7lw9fmFz1C3-0',
-        github: 'https://github.com/Bob1883/stock-vids',
+        github: 'https://github.com/august-b-f/stock-vids',
         categories: ['Fullstack', 'Frontend', 'Backend', 'Website', 'JS Fwks']
+    },
+    {
+        name: 'Cube compiler',
+        image: 'assets/Cube-compiler-icon.png',
+        background_img: 'assets/Cube-compiler-image.png',
+        info: 'This software converts diverse recorded data into engaging multimedia experiences, specifically MP3 audio and MP4 video files.',
+        link: 'https://github.com/August-B-F/Cube-convert',
+        github: 'https://github.com/August-B-F/Cube-convert',
+        categories: ['Fullstack', 'Frontend', 'Backend', 'Python', 'AI']
     },
     {   
         name: 'Ecommerce website',
         image: 'assets/Ecommerce-website-icon.png',
         background_img: 'assets/Ecommerce-website-gif.gif   ',
-        info: '',
+        info: 'This React front-end provides an e-commerce experience, allowing users to browse products, add items to a cart, and manage their accounts.',
         link: 'https://sleeq.netlify.app/',
-        github: 'https://github.com/Bob1883/sleeq',
+        github: 'https://github.com/August-B-F/Ecommerce-website',
         categories: ['Frontend', 'Website', 'JS Fwks']
-    },
-    {
-        name: 'Kernel AI assistant',
-        image: 'assets/kernel-ai-assistent-icon.png',
-        background_img: '',
-        info: '',
-        link: '',
-        github: '',
-        categories: ['Fullstack', 'Frontend', 'Backend', 'Python', 'AI']
-    },
-    {
-        name: 'Workout app',
-        image: 'assets/Workout-mobile-app-icon.png',
-        background_img: '',
-        info: '',
-        link: 'https://www.figma.com/design/IoADShBeWmjrnEeNZBG6Pa/Untitled?node-id=0-1&p=f&t=LGk0WFHv6AM1ozAH-0',
-        github: 'https://github.com/Bob1883/Astra-app',
-        categories: ['Fullstack', 'Frontend', 'Backend', 'Flutter']
     },
     {
         name: 'Chatbot website',
         image: 'assets/chat-bot-icon.png',
         background_img: 'assets/chat-bot-gif.gif',
         info: 'A lightweight Davinci-powered chatbot, released before ChatGPT, that forwards your prompts to the OpenAI API and returns responses.',
-        link: 'https://bob1883.github.io/Chatbotium/',
-        github: 'https://github.com/Bob1883/Chatbotium',
+        link: 'https://august-b-f.github.io/Chatbotium/',
+        github: 'https://github.com/august-b-f/Chatbotium',
         categories: ['Frontend', 'AI', 'Website']
+    },
+    {
+        name: 'Demon Back',
+        image: 'assets/DemonBack-icon.png',
+        background_img: 'assets/DemonBack-bg-gig.gif',
+        info: 'My first real project. It features a short story where you help a frog recover his stolen cookies from goblins.',
+        link: 'https://github.com/august-b-f/Demon-Back',
+        github: 'https://github.com/august-b-f/Demon-Back',
+        categories: ['Fullstack', 'Frontend', 'Backend', 'Python']
+    },
+    {
+        name: 'Workout app',
+        image: 'assets/Workout-mobile-app-icon.png',
+        background_img: 'assets/Workout-app-image.png',
+        info: 'A mobile app to create, time, and track custom workout routines with local data storage and progress statistics.',
+        link: 'https://www.figma.com/design/IoADShBeWmjrnEeNZBG6Pa/Untitled?node-id=0-1&p=f&t=LGk0WFHv6AM1ozAH-0',
+        github: 'https://github.com/August-B-F/Workout-app',
+        categories: ['Fullstack', 'Frontend', 'Backend', 'Flutter']
+    },
+    {
+        name: 'Portfolio website',
+        image: 'assets/portfolio-wed-icon.png',
+        background_img: 'assets/portfolio-bg-gif.gif',
+        info: 'An interactive portfolio website showcasing projects and skills through a pixel art book style interface.',
+        link: 'https://august-b-f.github.io/retro-pixel-art-portfolio-website/',
+        github: "https://github.com/august-b-f/retro-pixel-art-portfolio-website",
+        categories: ['Frontend', 'Website']
     },
 ];
 
