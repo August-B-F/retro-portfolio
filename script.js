@@ -269,9 +269,33 @@ function prevPage() {
     }
 }
 
+let pageContentElements = [];
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Populate the array once the DOM is ready
+    pageContentElements = [
+        page1[0], page1[1],
+        page2[0], page2[1],
+        page3[0], page3[1]
+    ].filter(el => el); // .filter(el => el) ensures only existing elements are included
+});
+
+function setPageContentInteractive(isInteractive) {
+    const pointerEventsValue = isInteractive ? 'auto' : 'none';
+    if (pageContentElements && pageContentElements.length > 0) {
+        pageContentElements.forEach(el => {
+            if (el && el.style) { // Check if element and its style property exist
+                el.style.pointerEvents = pointerEventsValue;
+            }
+        });
+    }
+}
+
 function animateNext() {
     var animation_index = 0;
     isAnimating = true;
+    setPageContentInteractive(false);
+
     // change the src of the image to if page = 0 then "assets/Open-Close/Open/1.png" then "assets/Open-Close/Open/2.png" etc with a delay of 0.5s
     if (page == 0) {
         var animation_length = 6;
@@ -360,12 +384,14 @@ function animateNext() {
     }
     setTimeout(function () {
         isAnimating = false;
+        setPageContentInteractive(true);
     }, 2000);
 }
 
 function animatePrev() {
     var animation_index = 0;
     isAnimating = true;
+    setPageContentInteractive(false);
 
     if (page == 1) {
         var animation_length = 6;
@@ -458,6 +484,7 @@ function animatePrev() {
     }
     setTimeout(function () {
         isAnimating = false;
+        setPageContentInteractive(true);
     }, 2000);
 }
 
