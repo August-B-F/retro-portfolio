@@ -102,10 +102,8 @@ function spawnCloud(initial = false) {
     container.appendChild(c);
 }
 
-// initial batch
 for (let i = 0; i < 8; i++) spawnCloud(true);
 
-// only spawn when tab is visible
 let cloudInterval = null;
 function startClouds() {
     if (cloudInterval) return;
@@ -116,17 +114,13 @@ function stopClouds() {
     cloudInterval = null;
 }
 
-// listen for visibility changes
 document.addEventListener("visibilitychange", () => {
     if (document.hidden) stopClouds();
     else startClouds();
 });
 
-// kick it off if we start visible
 if (!document.hidden) startClouds();
 
-
-// 
 window.addEventListener('resize', function () {
     if (window.innerWidth < 1000) {
         if (page3[0].style.display === "block" || page === 3) {
@@ -168,18 +162,15 @@ function updateBookPosition() {
 
 //  on book pressed 
 function bookPressed() {
-    // show the popup
     bookPopup[0].style.opacity = "1";
     bookPopup[0].style.pointerEvents = "auto";
 
-    // reset to page 0 state
     page = 0;
     hidePages();
     animatedPage[0].src = "assets/Content-Appear/13.png";
     animatedPage[1].src = "assets/Content-Appear/13.png";
     updateBookPosition();
 
-    // **IMMEDIATELY** run your open‐book animation
     nextPage();
 }
 
@@ -272,31 +263,17 @@ function prevPage() {
 let pageContentElements = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Populate the array once the DOM is ready
     pageContentElements = [
         page1[0], page1[1],
         page2[0], page2[1],
         page3[0], page3[1]
-    ].filter(el => el); // .filter(el => el) ensures only existing elements are included
+    ].filter(el => el);
 });
-
-function setPageContentInteractive(isInteractive) {
-    const pointerEventsValue = isInteractive ? 'auto' : 'none';
-    if (pageContentElements && pageContentElements.length > 0) {
-        pageContentElements.forEach(el => {
-            if (el && el.style) { // Check if element and its style property exist
-                el.style.pointerEvents = pointerEventsValue;
-            }
-        });
-    }
-}
 
 function animateNext() {
     var animation_index = 0;
     isAnimating = true;
-    setPageContentInteractive(false);
 
-    // change the src of the image to if page = 0 then "assets/Open-Close/Open/1.png" then "assets/Open-Close/Open/2.png" etc with a delay of 0.5s
     if (page == 0) {
         var animation_length = 6;
         animatedBook[0].src = "assets/Open-Close/Open/1.png";
@@ -307,16 +284,19 @@ function animateNext() {
             } else {
                 clearInterval(animation);
             }
+
         }, 100);
-        // reveal content after animation
+       
         setTimeout(function () {
             bookContainer[0].style.opacity = "1";
             reveal_content();
         }, 600);
+
         setTimeout(function () {
             page1[0].style.display = "block";
             page1[1].style.display = "block";
         }, 700);
+
     } else {
         var animation_length = 8;
         animatedBook[0].src = "assets/Page-Flip/Left/1.png";
@@ -384,14 +364,12 @@ function animateNext() {
     }
     setTimeout(function () {
         isAnimating = false;
-        setPageContentInteractive(true);
     }, 2000);
 }
 
 function animatePrev() {
     var animation_index = 0;
     isAnimating = true;
-    setPageContentInteractive(false);
 
     if (page == 1) {
         var animation_length = 6;
@@ -484,7 +462,6 @@ function animatePrev() {
     }
     setTimeout(function () {
         isAnimating = false;
-        setPageContentInteractive(true);
     }, 2000);
 }
 
@@ -520,18 +497,15 @@ function hide_content() {
     }, 50);
 }
 
-// —————— FILTER SETUP ——————
 const categories = [
     'All', 'Fullstack', 'Frontend', 'Backend', 'Python', 'C++',
     'AI', 'Website', 'C#', 'Flutter', 'JS Fwks'
 ];
 
-// — 2) grab the DOM nodes —
 const filterToggle = document.getElementById('filterToggle');
 const filterDropdown = document.getElementById('filterDropdown');
 const btnText = filterToggle.querySelector('.btn-text');
 
-// — 3) build the dropdown list with top/mid/bottom slices —
 function populateFilter() {
     filterDropdown.innerHTML = '';
     categories.forEach((cat, i) => {
@@ -554,7 +528,6 @@ function populateFilter() {
         opt.append(bg, txt);
         filterDropdown.appendChild(opt);
 
-        // click = pick & rebuild
         opt.addEventListener('click', () => {
             btnText.textContent = cat;
             filterDropdown.style.display = 'none';
@@ -569,7 +542,6 @@ filterToggle.addEventListener('click', () => {
         filterDropdown.style.display === 'block' ? 'none' : 'block';
 });
 
-// initially populate
 populateFilter();
 
 // Item selector
@@ -725,11 +697,6 @@ function buildInventory() {
                 selectedItemLink.href = item.link;
                 selectedItemGithub.href = item.github;
                 selectedItemTags.textContent = item.categories.join(", ");
-
-                if (window.innerWidth < 1000) {
-                    console.log("kpofsk");
-                    nextPage(); 
-                }
             });
 
             tile.appendChild(img);
@@ -739,5 +706,4 @@ function buildInventory() {
         });
 }
 
-// first draw
 buildInventory();
